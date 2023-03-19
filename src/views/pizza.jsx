@@ -1,14 +1,10 @@
-import {useParams} from "react-router-dom"
-import {useContext} from "react"
-import MyContext from "../MyContext"
+import CardDetails from "../components/card_details"
 
 const Pizza = () => {
-  const {pizzas} = useContext(MyContext)
-  const {selectedPizza} = useParams()
 
   return (
     <div>
-      {selectedPizza}
+      <CardDetails />
     </div>
   )
 }

@@ -1,0 +1,53 @@
+.details-card-flex {
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    margin: 50px auto;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.details-card-flex img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.details-card-flex h2{
+    text-transform: capitalize;
+}
+
+.details-card-flex p{
+    text-align: justify;
+}
+
+.details-card-flex .ingredients{
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+.details-card-flex .price-add{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-card-flex .price-add p{
+    font-size: 20px;
+    margin: 0px;
+}
+
+@media (min-width: 1400px) {
+    .details-card-flex {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+    }
+
+    .details-card-flex img{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 5px;
+        width: 500px;
+    }
+}

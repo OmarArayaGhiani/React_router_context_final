@@ -9,7 +9,8 @@ import Pizza from "./views/pizza"
 
 function App() {
   const [pizzas, setPizzas] = useState([])
-  const sharedStates = {pizzas}
+  const [addedPizza, setAddedPizza] = useState([])
+  const sharedStates = {pizzas, addedPizza, setAddedPizza}
 
   useEffect(() => {
     getDataPizzas()

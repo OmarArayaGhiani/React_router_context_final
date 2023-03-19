@@ -41,7 +41,7 @@ const MyCard = () => {
                     )
                   })}
                   <hr />
-                  <Card.Text className="text-center">
+                  <Card.Text className="text-center fs-5">
                     $<span>{element.price}</span>
                   </Card.Text>
                   <div className="d-flex">
