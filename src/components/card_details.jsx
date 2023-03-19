@@ -7,7 +7,7 @@ import {useContext} from "react"
 import MyContext from "../MyContext"
 
 const CardDetails = () => {
-  const {pizzas} = useContext(MyContext)
+  const {pizzas, addedPizzas, setAddedPizzas} = useContext(MyContext)
   const {selectedPizza} = useParams()
 
   return (
@@ -29,7 +29,9 @@ const CardDetails = () => {
                 <div className="price-add">
                   <p className="fw-bold">Precio: $<span>{element.price}</span>
                   </p>
-                  <Button variant="danger" className="add text-light">
+                  <Button 
+                  onClick={() => setAddedPizzas([...addedPizzas, element])}
+                  variant="danger" className="add text-light">
                     Añadir
                   </Button>
                 </div>

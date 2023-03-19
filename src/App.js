@@ -6,11 +6,12 @@ import MyContext from "./MyContext"
 
 import Home from "./views/home"
 import Pizza from "./views/pizza"
+import Carrito from "./views/carrito"
 
 function App() {
   const [pizzas, setPizzas] = useState([])
-  const [addedPizza, setAddedPizza] = useState([])
-  const sharedStates = {pizzas, addedPizza, setAddedPizza}
+  const [addedPizzas, setAddedPizzas] = useState([])
+  const sharedStates = {pizzas, addedPizzas, setAddedPizzas}
 
   useEffect(() => {
     getDataPizzas()
@@ -30,7 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/:selectedPizza" element={<Pizza />} />
-            <Route path="/carrito" />
+            <Route path="/carrito" element={<Carrito />} />
           </Routes>
         </BrowserRouter>
       </MyContext.Provider>

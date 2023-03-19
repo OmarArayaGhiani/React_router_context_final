@@ -1,12 +1,12 @@
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 
-import {useContext} from "react"
+import {useContext, useState} from "react"
 import {useNavigate} from "react-router-dom"
 import MyContext from "../MyContext"
 
 const MyCard = () => {
-  const {pizzas} = useContext(MyContext)
+  const {pizzas, addedPizzas, setAddedPizzas} = useContext(MyContext)
   const navigate = useNavigate()
 
   const toSelectedPizza = (pizzaName) => {
@@ -52,7 +52,11 @@ const MyCard = () => {
                     >
                       Ver más
                     </Button>
-                    <Button variant="danger" className="m-auto text-light">
+                    <Button
+                      onClick={() => setAddedPizzas([...addedPizzas, element])}
+                      variant="danger"
+                      className="m-auto text-light"
+                    >
                       Añadir
                     </Button>
                   </div>
