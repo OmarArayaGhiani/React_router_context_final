@@ -10,8 +10,8 @@ import Carrito from "./views/carrito"
 
 function App() {
   const [pizzas, setPizzas] = useState([])
-  const [addedPizzas, setAddedPizzas] = useState([])
-  const sharedStates = {pizzas, addedPizzas, setAddedPizzas}
+  const [price, setPrice] = useState()
+  const sharedStates = {pizzas, setPizzas, price, setPrice}
 
   useEffect(() => {
     getDataPizzas()

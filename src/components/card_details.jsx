@@ -3,12 +3,26 @@ import "../css/card_details.css"
 import Button from "react-bootstrap/Button"
 
 import {useParams} from "react-router-dom"
-import {useContext} from "react"
+import {useContext, useEffect} from "react"
 import MyContext from "../MyContext"
 
 const CardDetails = () => {
-  const {pizzas, addedPizzas, setAddedPizzas} = useContext(MyContext)
+  const {pizzas, setPizzas, setPrice} = useContext(MyContext)
   const {selectedPizza} = useParams()
+
+  const pizzaAdd = (e) => {
+    let cantidadTotal = e.cantidad + 1
+    e.cantidad = cantidadTotal
+    setPizzas([...pizzas])
+  }
+
+  useEffect(() => {
+    let total = 0
+    pizzas.forEach(function (pizza) {
+      total += pizza.price * pizza.cantidad
+      setPrice(total)
+    })
+  }, [pizzas])
 
   return (
     <div>
@@ -30,7 +44,7 @@ const CardDetails = () => {
                   <p className="fw-bold">Precio: $<span>{element.price}</span>
                   </p>
                   <Button 
-                  onClick={() => setAddedPizzas([...addedPizzas, element])}
+                  onClick={() => pizzaAdd(element)}
                   variant="danger" className="add text-light">
                     Añadir
                   </Button>

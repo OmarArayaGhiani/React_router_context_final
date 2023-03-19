@@ -6,36 +6,35 @@ import {useContext, useState, useEffect} from "react"
 import MyContext from "../MyContext"
 
 const TableCarrito = () => {
-  const {addedPizzas, setAddedPizzas} = useContext(MyContext)
-  const [price, setPrice] = useState()
-
+  const {pizzas, setPizzas, price, setPrice} = useContext(MyContext)
+  
   useEffect(() => {
     let total = 0
-    addedPizzas.forEach(function (pizzaPrice) {
-      total += pizzaPrice.price
+    pizzas.forEach(function (pizza) {
+      total += pizza.price * pizza.cantidad
       setPrice(total)
     })
-  }, [addedPizzas])
+  }, [pizzas])
 
-  const pizzaPlus = (e) => {
+  const pizzaAdd = (e) => {
     let cantidadTotal = e.cantidad + 1
     e.cantidad = cantidadTotal
-    setAddedPizzas([...addedPizzas])
+    setPizzas([...pizzas])
   }
 
   const pizzaRemove = (e, index) => {
     let cantidadTotal = e.cantidad - 1
     if (cantidadTotal < 0) cantidadTotal = 0
     e.cantidad = cantidadTotal
-    if ((cantidadTotal == 0)) addedPizzas.splice(index, 1)
-    setAddedPizzas([...addedPizzas])
+    setPizzas([...pizzas])
   }
 
   return (
     <div className="carrito">
       <h3>Detalles del pedido:</h3>
       <div className="items">
-        {addedPizzas.map((element, index) => {
+        {pizzas.map((element, index) => {
+          if(element.cantidad > 0)
           return (
             <div key={index}>
               <div className="item d-flex align-items-center">
@@ -48,10 +47,10 @@ const TableCarrito = () => {
                     $<span>{element.price}</span>
                   </p>
                   <p>
-                    X<span>2</span>
+                    X<span>{element.cantidad}</span>
                   </p>
                   <Button
-                    onClick={() => pizzaPlus(element)}
+                    onClick={() => pizzaAdd(element)}
                     variant="success"
                     className="add-remove"
                   >

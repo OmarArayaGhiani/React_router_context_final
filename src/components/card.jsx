@@ -1,17 +1,31 @@
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 
-import {useContext, useState} from "react"
+import {useContext, useEffect} from "react"
 import {useNavigate} from "react-router-dom"
 import MyContext from "../MyContext"
 
 const MyCard = () => {
-  const {pizzas, addedPizzas, setAddedPizzas} = useContext(MyContext)
+  const {pizzas, setPizzas, setPrice} = useContext(MyContext)
   const navigate = useNavigate()
 
   const toSelectedPizza = (pizzaName) => {
     navigate(`/${pizzaName}`)
   }
+
+  const pizzaAdd = (e) => {
+    let cantidadTotal = e.cantidad + 1
+    e.cantidad = cantidadTotal
+    setPizzas([...pizzas])
+  }
+
+  useEffect(() => {
+    let total = 0
+    pizzas.forEach(function (pizza) {
+      total += pizza.price * pizza.cantidad
+      setPrice(total)
+    })
+  }, [pizzas])
 
   return (
     <div className="container">
@@ -53,7 +67,7 @@ const MyCard = () => {
                       Ver más
                     </Button>
                     <Button
-                      onClick={() => setAddedPizzas([...addedPizzas, element])}
+                      onClick={() => pizzaAdd(element)}
                       variant="danger"
                       className="m-auto text-light"
                     >
