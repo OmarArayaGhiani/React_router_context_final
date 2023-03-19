@@ -1,5 +1,6 @@
 .navlink {
     color: whitesmoke;
+    display: flex;
 }
 
 .navlink:hover {
@@ -8,4 +9,14 @@
 
 .active {
     color: brown;
+}
+
+.nav-icon{
+    font-size: 20px;
+    margin-right: 6px;
+}
+
+.navlink img{
+    width: 20px;
+    margin-right: 10px;
 }

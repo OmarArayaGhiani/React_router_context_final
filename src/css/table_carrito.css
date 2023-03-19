@@ -4,17 +4,19 @@
     background-color: whitesmoke;
 }
 
-.carrito h3{
+.carrito h3 {
     padding: 20px 40px;
 }
 
-.carrito .items{
+.carrito .items {
     width: 90%;
     margin: auto;
-    padding-bottom: 20px;   
+    padding-bottom: 20px;
 }
 
-.carrito .item{
+.carrito .item {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
     height: 60px;
     margin: 10px;
@@ -22,43 +24,54 @@
     background-color: white;
 }
 
-.carrito p{
+.carrito p {
     margin: 0px;
     text-transform: capitalize;
 }
 
-.carrito img{
+.carrito img {
     width: 50px;
     height: 40px;
     margin-right: 10px;
 }
 
-.price-section{
+.price-section {
     display: flex;
     align-items: center;
 }
 
-.price-section p{
+.price-section p {
     margin-left: 20px;
 }
 
-.add-remove{
+.add-remove {
     width: 40px;
     height: 40px;
     margin-left: 10px;
 }
 
-.carrito .buy{
+.carrito .buy {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-.carrito .total-price{
+.carrito .total-price {
     margin: 10px;
 }
 
-.carrito .buy-btn{
+.carrito .buy-btn {
     width: 80px;
     margin-right: 10px;
+}
+
+@media(max-width: 768px) {
+    .carrito .item {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .carrito .price-section{
+        margin-top: 15px;
+    }
 }

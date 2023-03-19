@@ -1,0 +1,8 @@
+.card-ingredients{
+    display: flex;
+    align-items: center;
+}
+
+.card-ingredients .card-icon{
+    margin-right: 5px;
+}

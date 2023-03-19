@@ -1,3 +1,8 @@
+import "../css/card.css"
+
+import {BsCart4} from "react-icons/bs"
+import {CiPizza} from "react-icons/ci"
+
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 
@@ -48,9 +53,9 @@ const MyCard = () => {
                     return (
                       <Card.Text
                         key={ingredient}
-                        className="text-capitalize mb-0"
+                        className="text-capitalize mb-0 card-ingredients"
                       >
-                        {ingredient}
+                        <CiPizza className="card-icon"/>{ingredient}
                       </Card.Text>
                     )
                   })}
@@ -62,16 +67,16 @@ const MyCard = () => {
                     <Button
                       onClick={() => toSelectedPizza(element.name)}
                       variant="info"
-                      className="m-auto text-light"
+                      className="m-auto text-light btn-flex"
                     >
                       Ver más
                     </Button>
                     <Button
                       onClick={() => pizzaAdd(element)}
                       variant="danger"
-                      className="m-auto text-light"
+                      className="m-auto text-light btn-flex"
                     >
-                      Añadir
+                      Añadir<BsCart4 className="btn-icon"/>
                     </Button>
                   </div>
                 </Card.Body>

@@ -37,7 +37,7 @@ const TableCarrito = () => {
           if(element.cantidad > 0)
           return (
             <div key={index}>
-              <div className="item d-flex align-items-center">
+              <div className="item">
                 <div className="d-flex align-items-center">
                   <img src={element.img} alt={element.name} />
                   <p>{element.name}</p>

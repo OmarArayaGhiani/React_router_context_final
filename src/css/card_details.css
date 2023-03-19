@@ -23,6 +23,12 @@
 .details-card-flex .ingredients{
     margin: 0px;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+.details-card-flex .card-icon{
+    margin-right: 5px;
 }
 
 .details-card-flex .price-add{

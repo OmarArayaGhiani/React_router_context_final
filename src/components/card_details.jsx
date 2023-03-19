@@ -1,5 +1,8 @@
 import "../css/card_details.css"
 
+import {BsCart4} from "react-icons/bs"
+import {CiPizza} from "react-icons/ci"
+
 import Button from "react-bootstrap/Button"
 
 import {useParams} from "react-router-dom"
@@ -37,7 +40,7 @@ const CardDetails = () => {
                 <p>{element.desc}</p>
                 <p className="fw-bold">Ingredientes</p>
                 {element.ingredients.map((ingredient) => {
-                  return <p key={ingredient} className="ingredients">{ingredient}</p>
+                  return <p key={ingredient} className="ingredients"><CiPizza className="card-icon"/>{ingredient}</p>
                 })}
                 <hr />
                 <div className="price-add">
@@ -45,8 +48,8 @@ const CardDetails = () => {
                   </p>
                   <Button 
                   onClick={() => pizzaAdd(element)}
-                  variant="danger" className="add text-light">
-                    Añadir
+                  variant="danger" className="add text-light btn-flex">
+                    Añadir<BsCart4 className="btn-icon"/>
                   </Button>
                 </div>
               </div>
