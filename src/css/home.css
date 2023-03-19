@@ -1,0 +1,24 @@
+.home-bg {
+    background: rgba(0, 0, 0, 0.5) url("../img/home_bg.jpg");
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+}
+
+.home-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.home-flex hr{
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    width: 70%;
+}

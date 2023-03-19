@@ -1,0 +1,11 @@
+.navlink {
+    color: whitesmoke;
+}
+
+.navlink:hover {
+    color: rgba(165, 42, 42, 0.7);
+}
+
+.active {
+    color: brown;
+}
