@@ -1,0 +1,8 @@
+.nofound{
+    width: 60%;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+}

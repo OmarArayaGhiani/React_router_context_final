@@ -65,6 +65,24 @@
     margin-right: 10px;
 }
 
+.carrito-vacio{
+    width: 60%;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+}
+
+.link-carrito-vacio{
+    color: brown;
+    text-decoration: none;
+}
+
+.link-carrito-vacio:hover{
+    color: rgb(228, 18, 18);
+}
+
 @media(max-width: 768px) {
     .carrito .item {
         flex-direction: column;

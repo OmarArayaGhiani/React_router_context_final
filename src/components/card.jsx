@@ -6,31 +6,17 @@ import {CiPizza} from "react-icons/ci"
 import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 
-import {useContext, useEffect} from "react"
+import {useContext} from "react"
 import {useNavigate} from "react-router-dom"
 import MyContext from "../MyContext"
 
 const MyCard = () => {
-  const {pizzas, setPizzas, setPrice} = useContext(MyContext)
+  const {pizzas, pizzaAdd} = useContext(MyContext)
   const navigate = useNavigate()
 
   const toSelectedPizza = (pizzaName) => {
     navigate(`/${pizzaName}`)
   }
-
-  const pizzaAdd = (e) => {
-    let cantidadTotal = e.cantidad + 1
-    e.cantidad = cantidadTotal
-    setPizzas([...pizzas])
-  }
-
-  useEffect(() => {
-    let total = 0
-    pizzas.forEach(function (pizza) {
-      total += pizza.price * pizza.cantidad
-      setPrice(total)
-    })
-  }, [pizzas])
 
   return (
     <div className="container">

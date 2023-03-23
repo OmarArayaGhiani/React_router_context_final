@@ -6,26 +6,12 @@ import {CiPizza} from "react-icons/ci"
 import Button from "react-bootstrap/Button"
 
 import {useParams} from "react-router-dom"
-import {useContext, useEffect} from "react"
+import {useContext} from "react"
 import MyContext from "../MyContext"
 
 const CardDetails = () => {
-  const {pizzas, setPizzas, setPrice} = useContext(MyContext)
+  const {pizzas, pizzaAdd} = useContext(MyContext)
   const {selectedPizza} = useParams()
-
-  const pizzaAdd = (e) => {
-    let cantidadTotal = e.cantidad + 1
-    e.cantidad = cantidadTotal
-    setPizzas([...pizzas])
-  }
-
-  useEffect(() => {
-    let total = 0
-    pizzas.forEach(function (pizza) {
-      total += pizza.price * pizza.cantidad
-      setPrice(total)
-    })
-  }, [pizzas])
 
   return (
     <div>
